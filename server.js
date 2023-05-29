@@ -9,8 +9,7 @@ http
       filePath = "";
 
     fs.appendFile(
-      "log.txt",
-      "URL: " + addr + "\nTimestamp: " + new Date() + "\n\n",
+      "log.txt", "URL: " + addr + "\nTimestamp: " + new Date() + "\n\n",
       (err) => {
         if (err) {
           console.log(err);
