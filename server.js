@@ -4,12 +4,11 @@ const http = require("http"),
 
 http
   .createServer((request, response) => {
-    let addr = request.url,
-      q = url.parse(addr, true),
+      let parsedAddr = url.parse(request.url),
       filePath = "";
 
     fs.appendFile(
-      "log.txt", "URL: " + addr + "\nTimestamp: " + new Date() + "\n\n",
+      "log.txt", "URL: " + parsedAddr + "\nTimestamp: " + new Date() + "\n\n",
       (err) => {
         if (err) {
           console.log(err);
