@@ -4,10 +4,106 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>myFlix</title>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
     </head>
     <body>
         <p>Web application that provides information about various movies, directors, and genres. 
         Users can subscribe and create lists such as a list of favorite movies.
         </p>
+        <br>
+    <table>
+      <thead>
+        <tr>
+          <th>Purpose</th>
+          <th>URL</th>
+          <th>HTTP Method</th>
+          <th>Query Parameters</th>
+          <th>Request Body Data Format</th>
+          <th>Response Body Data Format</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Add a user</td>
+          <td>/users</td>
+          <td>POST</td>
+          <td>None</td>
+          <td>A JSON object holding data about the user to add, structured like: {"Username": "",}</td>
+          <td>A JSON object holding data about the user that was added, including an ID: {"Username": "", "id": ""}</td>
+        </tr>
+
+        <tr>
+          <td>Update a user (username)</td>
+          <td>/users/[id]</td>
+          <td>PUT</td>
+          <td>:id</td>
+          <td>None</td>
+          <td>A JSON object holding data about the user that was updated, including an ID: {"Username": "", "id": ""}</td>        
+        </tr>
+
+        <tr>
+          <td>Remove a user</td>
+          <td>/users/[id]</td>
+          <td>DELETE</td>
+          <td>:id</td>
+          <td>None</td>
+          <td>Text message indicating that the user has been deleted</td>
+        </tr>
+
+        <tr>
+          <td>Add a movie to user favorites</td>
+          <td>/users/[id]/[movieName]</td>
+          <td>POST</td>
+          <td>:id, :movieName</td>
+          <td>None</td>
+          <td>Text indicating that the movie has been added to the user's list of favorite movies</td>
+        </tr>
+
+        <tr>
+          <td>Remove a movie from user favorites</td>
+          <td>/users/[id]/[movieName]</td>
+          <td>DELETE</td>
+          <td>:id, :movieName</td>
+          <td>None</td>
+          <td>Text indicating that the movie has been removed from the user's list of favorite movies</td>
+        </tr>
+
+        <tr>
+          <td>Get a list of movies</td>
+          <td>/movies</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>None</td>
+          <td>A JSON object holding data about all the movies</td>
+        </tr>
+
+        <tr>
+          <td>Get data about a single movie by movie name</td>
+          <td>/movies/[movieName]</td>
+          <td>GET</td>
+          <td>:movieName</td>
+          <td>None</td>
+          <td>A JSON object holding data about a single movie, containing the description, genre, director, image, URL, and whether it's featured or not</td>
+        </tr>
+
+        <tr>
+          <td>Get data about a genre by name</td>
+          <td>/movies/[genres]/[genreName]</td>
+          <td>GET</td>
+          <td>:genres, :genreName</td>
+          <td>None</td>
+          <td>A JSON object holding data about a single genre</td>
+        </tr>
+
+        <tr>
+          <td>Returns data about a director by name</td>
+          <td>/movies/[directors]/[directorName]</td>
+          <td>GET</td>
+          <td>:directors, :directorName</td>
+          <td>None</td>
+          <td>A JSON object holding data about a single director, containing the director's bio, birth year, and death year </td>
+        </tr>
+    </tbody>    
+    </table>
     </body>
 </html>
