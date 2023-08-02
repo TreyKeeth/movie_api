@@ -53,20 +53,20 @@
 
         <tr>
           <td>Add a movie to user favorites</td>
-          <td>/users/[id]/[movieName]</td>
+          <td>/users/[id]</td>
           <td>POST</td>
-          <td>:id, :movieName</td>
+          <td>:id</td>
           <td>None</td>
-          <td>Text indicating that the movie has been added to the user's list of favorite movies</td>
+          <td>Text indicating that the movie has been added to the user's list of favorite movies. The id is the movie id.</td>
         </tr>
 
         <tr>
           <td>Remove a movie from user favorites</td>
-          <td>/users/[id]/[movieName]</td>
+          <td>/users/[id]</td>
           <td>DELETE</td>
-          <td>:id, :movieName</td>
+          <td>:id</td>
           <td>None</td>
-          <td>Text indicating that the movie has been removed from the user's list of favorite movies</td>
+          <td>Text indicating that the movie has been removed from the user's list of favorite movies. The id is the movie id.</td>
         </tr>
 
         <tr>
@@ -80,25 +80,25 @@
 
         <tr>
           <td>Get data about a single movie by movie name</td>
-          <td>/movies/[movieName]</td>
+          <td>/movies/[Title]</td>
           <td>GET</td>
-          <td>:movieName</td>
+          <td>:Title</td>
           <td>None</td>
           <td>A JSON object holding data about a single movie, containing the description, genre, director, image, URL, and whether it's featured or not</td>
         </tr>
 
         <tr>
           <td>Get data about a genre by name</td>
-          <td>/movies/[genres]/[genreName]</td>
+          <td>/movies/[Genre]/[Name]</td>
           <td>GET</td>
-          <td>:genres, :genreName</td>
+          <td>:Genre, :Name</td>
           <td>None</td>
           <td>A JSON object holding data about a single genre</td>
         </tr>
 
         <tr>
           <td>Returns data about a director by name</td>
-          <td>/movies/[directors]/[directorName]</td>
+          <td>/movies/[Director]/[Name]</td>
           <td>GET</td>
           <td>:directors, :directorName</td>
           <td>None</td>
